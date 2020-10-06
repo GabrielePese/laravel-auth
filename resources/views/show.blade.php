@@ -18,7 +18,7 @@
                             <br>
                 <a class="btn btn-primary" href="{{route('index')}}"> COME BACK</a>
                 <a class="btn btn-danger" href="{{route('emp-delete', $emps -> id)}}">DELETE</a>
-                
+                <a class="btn btn-dark" href="{{route('emp-edit', $emps -> id)}}">EDIT</a>
                 </div>
             </div>
         </div>

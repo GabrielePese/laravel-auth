@@ -20,6 +20,9 @@ Route::get('/destroy/{id}', 'LoggedController@destroy') ->name('emp-delete');
 Route::get('/create', 'LoggedController@create') ->name('emp-create');
 Route::post('/store', 'LoggedController@store') ->name('emp-store');
 
+Route::get('/edit/{id}', 'LoggedController@edit') ->name('emp-edit');
+Route::post('/store/{id}', 'LoggedController@update') ->name('emp-update');
+
 
 
 

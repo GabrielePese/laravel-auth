@@ -40,4 +40,31 @@ class LoggedController extends Controller
         return redirect() -> route('index');
         
     }
+
+    public function edit($id){
+        $emp = Employee::findOrFail($id);
+        $loc = Location::all();
+
+
+        return view('edit-emp',compact('emp', 'loc'));
+    }
+
+    public function update (Request $request, $id){
+        $data = $request -> all();
+        $emp = Employee::findOrFail($id);
+        $emp ->update($data);
+
+        // AL POSTO DI $emp ->update($data);
+        // POSSO SCRIVERE COSI.. USANDO NOI ARRAY: 
+
+        // $emp -> update([
+        //     "name"=> $request ->input('name'),
+        //     "lastname"=> $request ->input('lastname'),
+        //     "location_id"=> $request ->input('location_id')
+        // ]);
+        
+
+        return redirect() -> route('emp-show' , $id);
+       
+    }
 }
